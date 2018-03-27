@@ -8,18 +8,22 @@ The default value can be useful to prevent exceptions, if the variables are poss
 Usage
 -----
 
-* Add the plugin script to tinymce in your project with bower
-* Add "twigvariable" to tinymce config plugins and toolbar array.
+* Add the plugin to tinymce inside your project with your favourite package-manager
+* Move content of this repo in tinymce-subfolder: /tinymce/plugins/twigvariable
+* Add "twigvariable" as new item to tinymce initialisation inside "plugins" and "toolbar" array.
 * Set the optional parameters for twigvariable plugin
 
 
-Installation with bower
--------
-To install plugin using bower use command
+Installation
+------------
+##### To install plugin with bower use command
 ```js
 bower install tinymce-plugin-twigvariable
 ```
-
+##### To install plugin with yarn use command
+```js
+yarn add tinymce-plugin-twigvariable
+```
 
 Initialize the plugin and the optional parameters
 -------------------------------------------------
