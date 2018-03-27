@@ -1,0 +1,16 @@
+{
+  "name": "tinymce-plugin-twigvariable",
+  "description": "Plugin for TinyMCE 4.x which adds a simple dialog to add a twig variables which optional prefix and default value.",
+  "version": "2.1.0",
+  "main": "plugin.js",
+  "author": "Klaus Schürg <klaus.schuerg.developer@gmail.com>",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/pixelfantasy/tinymce-plugin-twigvariable"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "tinymce": "^4.5.*"
+  },
+  "license": "MIT"
+}

@@ -7,13 +7,13 @@ tinymce.PluginManager.add('twigvariable', function(editor, url) {
     var twigvariablePrefix = twigvariableSettings[0].default_variable_prefix;
     var twigvariableDefaultPlaceholder = twigvariableSettings[0].twig_filter_default_placeholder;
     var twigvariablePredefinedVariables = twigvariableSettings[0].predefined_variable_combobox;
-    if (twigvariablePrefix != "") {
+    if (twigvariablePrefix !== "") {
         twigvariablePrefixDefined = true;
     }
     if (typeof twigvariablePrefix === 'undefined') {
         twigvariablePrefix = "";
     }
-    if (twigvariablePrefix.match(/.$/) != true && twigvariablePrefixDefined == true) {
+    if (twigvariablePrefix.match(/.$/) !== true && twigvariablePrefixDefined === true) {
         twigvariablePrefix += ".";
     }
     if (typeof twigvariablePredefinedVariables !== 'undefined') {
@@ -43,14 +43,14 @@ tinymce.PluginManager.add('twigvariable', function(editor, url) {
                 },
                 {type: 'container', html: '<br><span style="font-weight: bold;">TinyMCE Init Settings:</span>'},
                 {type: 'checkbox', text: ' twigvariable_default_placeholder should be added', checked: twigvariableDefaultPlaceholder, disabled: true},
-                {type: 'checkbox', text: ' twigvariable_prefix: ' + (twigvariablePrefix == "" ? "not set" : twigvariablePrefix), checked: twigvariablePrefixDefined, disabled: true},
-                {type: 'checkbox', text: ' twigvariable_predefined_variables: ' + (twigvariablePredefinedVariablesDefined == false ? "not set" : twigvariablePredefinedVariables.length) , checked: twigvariablePredefinedVariablesDefined, disabled: true}
+                {type: 'checkbox', text: ' twigvariable_prefix: ' + (twigvariablePrefix === "" ? "not set" : twigvariablePrefix), checked: twigvariablePrefixDefined, disabled: true},
+                {type: 'checkbox', text: ' twigvariable_predefined_variables: ' + (twigvariablePredefinedVariablesDefined === false ? "not set" : twigvariablePredefinedVariables.length) , checked: twigvariablePredefinedVariablesDefined, disabled: true}
             ],
             onSubmit: function(e) {
                 // console.log(twigvariableInputChoice);
-                if (twigvariableInputChoice == "twigVariableDialogTextbox") {
+                if (twigvariableInputChoice === "twigVariableDialogTextbox") {
                     var twigvariableDefaultPlaceholderAddon = "";
-                    if (twigvariableDefaultPlaceholder == true) {
+                    if (twigvariableDefaultPlaceholder === true) {
                         twigvariableDefaultPlaceholderAddon = "|default(\"{{ " + twigvariablePrefix + e.data.twigVariableDialogTextbox + " }}\")";
                     }
                     editor.insertContent("{{ " + twigvariablePrefix + e.data.twigVariableDialogTextbox + twigvariableDefaultPlaceholderAddon + " }}");
@@ -58,8 +58,8 @@ tinymce.PluginManager.add('twigvariable', function(editor, url) {
                     editor.insertContent(e.data.twigVariableDialogCombobox);
                 }
             },
-            onOpen: function (e) {
-                if (twigvariablePredefinedVariablesDefined != true) {
+            onOpen: function() {
+                if (twigvariablePredefinedVariablesDefined !== true) {
                     twigVariableDialog.find('#twigVariableDialogCombobox').parent().hide(true);
                 }
             }
